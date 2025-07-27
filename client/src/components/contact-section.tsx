@@ -46,35 +46,46 @@ export function ContactSection() {
     return !Object.values(newErrors).some(error => error !== "")
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    
-    if (!validateForm()) {
-      return
-    }
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault()
 
-    setIsSubmitting(true)
-    
-    try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 2000))
-      
+  if (!validateForm()) return
+
+  setIsSubmitting(true)
+
+  try {
+    const response = await fetch("https://formspree.io/f/mdkdzngq", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        message: formData.message
+      })
+    })
+
+    if (response.ok) {
       toast({
         title: "Message sent!",
-        description: "Thank you for your message. I will get back to you soon.",
+        description: "Thank you! I’ll reply shortly.",
       })
-      
       setFormData({ name: "", email: "", message: "" })
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "Failed to send message. Please try again.",
-        variant: "destructive",
-      })
-    } finally {
-      setIsSubmitting(false)
+    } else {
+      throw new Error("Failed to send")
     }
+  } catch (error) {
+    toast({
+      title: "Error",
+      description: "Something went wrong. Please try again later.",
+      variant: "destructive",
+    })
+  } finally {
+    setIsSubmitting(false)
   }
+}
+
 
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }))

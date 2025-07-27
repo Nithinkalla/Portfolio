@@ -27,7 +27,7 @@ export function HeroSection() {
   }
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center hero-gradient">
+    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-600 to-red-700">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
         <div className="fade-in">
           <h1 className="text-5xl md:text-7xl font-bold mb-6" data-testid="hero-name">
@@ -50,7 +50,7 @@ export function HeroSection() {
             <Button
               variant="outline"
               onClick={() => scrollToSection("contact")}
-              className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition-colors"
+              className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors"
               data-testid="button-contact"
             >
               Get In Touch

@@ -1,11 +1,11 @@
 export function AboutSection() {
   const skills = [
-    "Python", "Java", "JavaScript", "React.js", 
-    "Machine Learning", "Android Development", "AWS", "MySQL"
+    "Python", "Java", "JavaScript", 
+    "Machine Learning", "Android Development", "MySQL"
   ]
 
   return (
-    <section id="about" className="py-20 bg-gray-50 dark:bg-dark-surface">
+    <section id="about" className="py-20 bg-beige-50 dark:bg-dark-surface">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white" data-testid="about-title">
@@ -40,7 +40,11 @@ export function AboutSection() {
           
           <div className="text-center">
             <div className="w-80 h-80 mx-auto bg-gradient-to-br from-blue-400 to-purple-600 rounded-full flex items-center justify-center text-white text-6xl font-bold shadow-2xl" data-testid="profile-avatar">
-              KN
+                  <img
+      src="src/Assets/Pic.jpg" // Move image to /public folder or use an online URL
+      alt="KN"
+      className="w-full h-full object-cover rounded-full"
+    />
             </div>
             <div className="mt-8 space-y-4">
               <div className="flex items-center justify-center space-x-2 text-gray-600 dark:text-gray-300" data-testid="info-location">

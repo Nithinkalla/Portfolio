@@ -10,8 +10,9 @@ export function ProjectsSection() {
       technologies: ["Python", "Machine Learning", "React.js", "Flask"],
       techColors: ["blue", "green", "purple", "orange"],
       icon: "fas fa-tshirt",
-      gradient: "from-purple-500 to-pink-600",
-      githubUrl: "https://github.com/Nithinkalla",
+      image:"src/Assets/Virtual-Try-On.png",
+      // gradient: "from-purple-500 to-pink-600",
+      githubUrl: "https://github.com/Nithinkalla/VTON",
     },
     {
       id: "art-classification",
@@ -20,18 +21,20 @@ export function ProjectsSection() {
       technologies: ["Python", "OpenCV", "Scikit-Learn", "Matplotlib"],
       techColors: ["blue", "red", "yellow", "green"],
       icon: "fas fa-palette",
-      gradient: "from-indigo-500 to-cyan-600",
-      githubUrl: "https://github.com/Nithinkalla",
+      image:"src/Assets/art-styles.jpg",
+      // gradient: "from-indigo-500 to-cyan-600",
+      githubUrl: "https://github.com/Nithinkalla/Art-Style-Classification",
     },
     {
-      id: "mobile-apps",
-      title: "Mobile Applications",
-      description: "Collection of Android applications featuring learning apps, recipe search, and user authentication with Firebase backend and ML Kit integration.",
+      id: "mobile applications",
+      title: "File Transfer",
+      description: "A cross-platform mobile app built using Java and Android SDK for fast and secure filesharing between devices. It supports real-time wireless file transfer using Wi-Fi Direct, ensuring efficient data transmission without internet dependency",
       technologies: ["Java", "Android", "Firebase", "ML Kit"],
       techColors: ["orange", "green", "yellow", "purple"],
       icon: "fas fa-mobile-alt",
-      gradient: "from-emerald-500 to-teal-600",
-      githubUrl: "https://github.com/Nithinkalla",
+      image:"src/Assets/filetransfer.jpg",
+      // gradient: "from-emerald-500 to-teal-600",
+      githubUrl: "https://github.com/Nithinkalla/Filetransfer",
     },
   ]
 
@@ -67,10 +70,11 @@ export function ProjectsSection() {
               className="project-card bg-white dark:bg-dark-surface rounded-xl shadow-lg overflow-hidden"
               data-testid={`project-card-${project.id}`}
             >
-              <div className={`h-48 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}>
-                <div className="absolute inset-0 bg-black/20"></div>
-                <div className="absolute bottom-4 left-4 text-white">
-                  <i className={`${project.icon} text-3xl`}></i>
+              <div className={`h-48 bg-gradient-to-br  relative overflow-hidden`}>
+                <img src={project.image} alt={project.title} className="object-cover w-full h-full" />
+  <div className="absolute inset-0 bg-black/30"></div>
+  <div className="absolute bottom-4 left-4 text-white z-10">
+    <i className={`${project.icon} text-3xl`}></i>
                 </div>
               </div>
               <div className="p-6">

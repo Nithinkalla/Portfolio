@@ -9,7 +9,7 @@ export function ResumeSection() {
   const downloadResume = () => {
     // Create a download link for the resume
     const link = document.createElement('a')
-    link.href = '/resume.pdf' // This would be served from the public directory
+    link.href = 'src/Assets/NithinResume.pdf' // This would be served from the public directory
     link.download = 'Kalla_Nithin_Resume.pdf'
     document.body.appendChild(link)
     link.click()
@@ -24,7 +24,7 @@ export function ResumeSection() {
     },
     {
       icon: Code,
-      text: "Full-Stack Developer",
+      text: "Software Developer",
       color: "text-blue-600"
     },
     {
@@ -100,7 +100,11 @@ export function ResumeSection() {
                       <div className="bg-gray-100 dark:bg-dark-surface-light rounded-lg p-8 text-center">
                         <FileText className="w-16 h-16 text-red-500 mb-4 mx-auto" />
                         <p className="text-gray-600 dark:text-gray-300 mb-4" data-testid="resume-preview-message">
-                          Resume preview would be displayed here
+                                <iframe
+        src="src/Assets/NithinResume.pdf"
+        className="w-full h-[75vh] rounded-lg"
+        title="Resume Preview"
+      ></iframe>
                         </p>
                         <p className="text-sm text-gray-500 dark:text-gray-400">
                           In a real implementation, you would integrate a PDF viewer library to display the resume inline

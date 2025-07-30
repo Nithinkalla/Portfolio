@@ -1,0 +1,12 @@
+{
+  "name": "portfolio-client",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.7.0"
+  }
+}
